@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Whispers of Wisdom</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #000000;
+    }
+    body {
+      background-color: var(--bg-dark);
+      color: #f8fafc;
+      font-family: 'Inter', sans-serif;
+      overflow: hidden !important;
+      -webkit-font-smoothing: antialiased;
+      touch-action: manipulation;
+    }
+    .font-serif { font-family: 'Playfair Display', serif; }
+    .font-tech { font-family: 'Space Mono', monospace; }
+    
+    .glass {
+      background: rgba(18, 18, 18, 0.4);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .painting-frame {
+      box-shadow: 
+        0 40px 100px -20px rgba(0, 0, 0, 0.9),
+        0 20px 40px -10px rgba(0, 0, 0, 0.5);
+    }
+    
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    
+    @keyframes breathe {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(0.98); }
+    }
+    
+    .animate-marquee {
+      display: flex;
+      width: max-content;
+      animation: marquee linear infinite;
+    }
+
+    .animate-breathe {
+      animation: breathe 3s ease-in-out infinite;
+    }
+
+    ::-webkit-scrollbar { display: none !important; }
+    * { -ms-overflow-style: none !important; scrollbar-width: none !important; }
+
+    button:active { transform: scale(0.97); }
+
+    /* Circular Loader Styles */
+    .loader-ring {
+      stroke-dasharray: 126; /* 2 * PI * radius */
+      stroke-dashoffset: 126;
+      transition: stroke-dashoffset 0.1s linear;
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+    }
+
+    @keyframes progress-fill {
+      from { stroke-dashoffset: 126; }
+      to { stroke-dashoffset: 0; }
+    }
+
+    .animate-progress-fill {
+      animation: progress-fill 2s ease-in-out infinite;
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.38.0",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "idb-keyval": "https://esm.sh/idb-keyval@6"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+  <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
