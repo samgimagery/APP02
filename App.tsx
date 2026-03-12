@@ -315,7 +315,7 @@ const App: React.FC = () => {
         const response = await fetch(compositeUrl);
         const blob = await response.blob();
         const file = new File([blob], `${state.result.philosopher.replace(/\s+/g, '_')}_Wisdom.png`, { type: 'image/png' });
-        await navigator.share({ files: [file], title: 'Whispers of Wisdom', text: `A glimpse of wisdom from ${state.result.philosopher}.` });
+        await navigator.share({ files: [file], title: 'Wisdom Whispers', text: `A glimpse of wisdom from ${state.result.philosopher}.` });
       } catch (err: any) {
         if (err.name !== 'AbortError') triggerDownload();
       }
@@ -364,7 +364,7 @@ const App: React.FC = () => {
         <div className="h-full flex flex-col p-8 md:p-12 overflow-y-auto no-scrollbar space-y-12">
           <div className="shrink-0 h-[140px]" />
           <section className="space-y-6">
-            <div className="flex items-center gap-3"><Search size={14} className="text-zinc-500" /><h2 className="text-[10px] uppercase tracking-[0.4em] font-bold text-zinc-500">WHISPERS OF WISDOM</h2></div>
+            <div className="flex items-center gap-3"><Search size={14} className="text-zinc-500" /><h2 className="text-[10px] uppercase tracking-[0.4em] font-bold text-zinc-500">WISDOM WHISPERS</h2></div>
             <div className="relative flex items-center">
               <input type="text" className="w-full bg-white/5 border border-zinc-800/50 rounded-2xl py-4 pl-6 pr-14 focus:ring-1 focus:ring-zinc-700 outline-none text-white placeholder-transparent font-serif" value={philosopherInput} onChange={e => setPhilosopherInput(e.target.value)} onKeyDown={e => e.key === 'Enter' && handleGenerate()} placeholder="Name" />
               {!philosopherInput && <div className={`absolute left-6 top-1/2 -translate-y-1/2 pointer-events-none text-zinc-500 transition-opacity duration-1000 ${isFading ? 'opacity-0' : 'opacity-100'}`}>{typedText}</div>}
