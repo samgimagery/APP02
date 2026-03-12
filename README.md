@@ -15,9 +15,14 @@ View your app in AI Studio: https://ai.studio/apps/drive/1XvbZSx14JmjHBHc8AqZaVX
 
 1. Install dependencies:
    `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+2. Set `GEMINI_API_KEY` in a local `.env` file (used by the server)
+3. Build and run:
+   `npm run build`
+   `npm run start`
+
+Optional for local frontend dev with Vite:
+1. Start the server with `GEMINI_API_KEY=... npm run server`
+2. In another terminal, run `VITE_API_BASE=http://localhost:4173 npm run dev`
 
 ## Convert to Xcode (iOS)
 
