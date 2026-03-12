@@ -438,7 +438,7 @@ const App: React.FC = () => {
               </div>
             </div>
           ) : !state.loading && (
-            <CenterMessage bigText={splashName} smallText="Whispers of Wisdom" />
+            <CenterMessage bigText={splashName} smallText="Wisdom Whispers" />
           )}
         </div>
       </main>
